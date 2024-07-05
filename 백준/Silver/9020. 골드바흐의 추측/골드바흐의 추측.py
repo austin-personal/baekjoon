@@ -18,3 +18,4 @@ for _ in range(int(input())):
       else:
           a -= 1
           b += 1
+      print(a, b)

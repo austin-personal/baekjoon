@@ -14,3 +14,8 @@ for i in range(2, num):
 # 그 숫자가 True로 반환되면 new p_list에 넣어짐
 
 #---------------------------------------------------------------
+
+
+
+## Using the * Operator to Unpack the Generator
+print(*(n for n in range(1, 28)))

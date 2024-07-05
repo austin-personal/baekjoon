@@ -10,3 +10,6 @@ for num in nums:
     if count == 0:
       p_num+=1
 print(p_num)
+
+
+# 소수의 특성상 어느 숫자의 num**0.5 만 체크해봐도 그 숫자가 소수인지 알수 있다. 

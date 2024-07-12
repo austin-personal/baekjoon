@@ -1,3 +1,15 @@
+""" 
+Key take aways:
+1. Use a dictionary to store the tree structure. (key: root, value: left, right child)
+2. Implement a recursive function to traverse the tree in preorder, inorder, and postorder.
+3. Use sys.stdin.readline() to read input efficiently.
+4. Print the results with a space separator and no newline character at the end.
+
+Time Complexity: O(n)
+"""
+
+
+
 import sys
 
 # Take 인접노드 
@@ -38,4 +50,4 @@ print()
 inorder('A')
 print()
 postorder('A')
-  
+ 

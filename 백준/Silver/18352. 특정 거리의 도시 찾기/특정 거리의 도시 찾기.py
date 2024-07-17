@@ -36,7 +36,7 @@ def bfs(start_node):
                     visited[neighbor] = True
         distance += 1
 
-    if distance < k or not result:
+    if not result:
         return [-1]
     else:
         return sorted(result)

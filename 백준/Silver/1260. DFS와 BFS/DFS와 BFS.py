@@ -14,15 +14,16 @@ stack = []
 
 def dfs(node):
   stack = [node]
+  d_visited[node-1] = True
   while stack:
       vertex = stack.pop()
       if not d_visited[vertex - 1]:
-          d_visited[vertex - 1] = True
           d_ans.append(vertex)
           # 인접 정점들을 스택에 추가할 때 내림차순으로 정렬하여 작은 번호부터 방문
           for neighbor in sorted(li[vertex], reverse=True):
               if not d_visited[neighbor - 1]:
-                  stack.append(neighbor)
+                  stack.append( neighbor)
+                  d_visited[neighbor - 1] = True
 
 
 b_ans = []

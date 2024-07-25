@@ -11,6 +11,10 @@ for i in range(1, len(first_word) + 1):
             dp[i][j] = dp[i - 1][j - 1] + 1
         else:
             dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+    #     for z in dp:
+    #         print(z)
+    #     print("++++++++++++++++++++++")
+    # print("----------------------")
 
 ans = dp[len(first_word)][len(second_word)]
 print(ans)

@@ -1,20 +1,26 @@
-import sys
+N = int(input())
+classes = [0 for _ in range(N)]
+result = 0
 
-N = int(sys.stdin.readline().rstrip())
+for i in range(N):
+    classes[i] = list(map(int, input().split()))
 
-line = list(map(int, sys.stdin.readline().rstrip().split()))
+classes.sort(key=lambda x: (x[1]))
+recent_end = float("inf")
+ends = []
 
-uniq = list(set(line))
-# uniq.sort()
+for cls in classes:
+    if cls[1] >= recent_end:
+        ends.append(cls[2])
+        ends.remove(recent_end)
+        recent_end = min(ends)
 
-dp = [[0] * (len(line) + 1) for _ in range(len(uniq) + 1)]
+    if cls[1] < recent_end:
+        ends.append(cls[2])
+        print(ends)
+        result += 1
 
-for i in range(1, len(uniq)+1):
-    for j in range(1, len(line)+1):
+        if cls[2] < recent_end:
+            recent_end = cls[2]
 
-        if uniq[i-1] == line[j-1]:
-            dp[i][j] = dp[i-1][j-1]+1
-        else:
-            dp[i][j] = max(dp[i-1][j], dp[i][j-1])
-
-print(dp[len(uniq)][len(line)])
+print(result)
